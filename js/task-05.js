@@ -4,6 +4,9 @@ const elements = {
 }
 
 function onChangeInput(event) {
+    if (elements.input.value === '') {
+        return elements.span.textContent = 'Anonymous';
+    }
     elements.span.textContent = event.currentTarget.value;
 }
 
