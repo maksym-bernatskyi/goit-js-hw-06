@@ -4,6 +4,7 @@ form.addEventListener('submit', dataSubmit);
 
 function dataSubmit(event) {
     event.preventDefault();
+
     const {
         elements: { email, password }
     } = event.currentTarget;
@@ -11,6 +12,12 @@ function dataSubmit(event) {
     if (email.value === "" || password.value === "") {
         alert('Все поля должны быть заполнены!')
     }
-    console.log(`Login: ${email.value}, Password: ${password.value}`);
+    
+    const formData = {
+        email: email.value,
+        password: password.value,
+    }
+    
+    console.log(formData);
     event.currentTarget.reset();
 }
